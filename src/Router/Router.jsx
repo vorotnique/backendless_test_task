@@ -1,4 +1,4 @@
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import { Suspense, lazy } from 'react';
 import HomePage from '../pages/HomePage';
 import NotFound from '../pages/NotFound';
@@ -17,15 +17,16 @@ const DummyChart = lazy(
 );
 
 export default function Router() {
+  const location = useLocation().pathname.split('/')[1];
   return (
     <>
       <Suspense fallback={<h1>Loading…</h1>}>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route path={location} element={<Layout />}>
             <Route index element={<HomePage />} />
-            <Route path="/dummyTable" element={<DummyTable />} />
-            <Route path="/dummyList" element={<DummyList />} />
-            <Route path="/dummyChart" element={<DummyChart />} />
+            <Route path="dummyTable" element={<DummyTable />} />
+            <Route path="dummyList" element={<DummyList />} />
+            <Route path="dummyChart" element={<DummyChart />} />
             <Route path="*" element={<NotFound />} />
           </Route>
         </Routes>
