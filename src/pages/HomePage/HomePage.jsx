@@ -3,7 +3,7 @@ import './HomePage.scss';
 export default function HomePage() {
   return (
     <section className="HomePage">
-      <h1 className="HomePage__header">Raw Thoughts</h1>
+      <h1 className="HomePage__header">Raw Thoughts v.1.1</h1>
       <p className="HomePage__info">
         This page is here just for the sake of existing, since something should
         be on the main route. If I understood the task correctly, the tabs
@@ -12,7 +12,8 @@ export default function HomePage() {
         If it's for REST API demonstration instead of simple local JSON import,
         let it be that way, but the JSON is hosted on a freemium online service
         and seems to have limited amount of queries. The number is about 10 000,
-        but still.
+        but still. GitHub pages require a bit more extra solutions for a router
+		than ordinary servers.
       </p>
     </section>
   );
